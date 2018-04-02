@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */ 
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+      url(/iconfont/MaterialIcons-Regular.woff) format('woff'),
+      url(/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+  }
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+body {
+    font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contactMenu {
+    float: right;
+}
+
+.labelPerson {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.labelScopes {
+    width: 20%;
+    font-size: 70%;
+    margin-top: 10px;
+}
+
+.icon_top {
+    vertical-align: top;
+}
+
+.lastChange {
+    font-style: italic;
+    font-size: 70%;
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
+
+.presenceToggle {
+    padding: 5pt;
+}
+
+ul.list-unstyled li {
+    list-style-type: none;
+    margin-left: -1em;
+}
+
+ul.list-unstyled li:nth-child(odd) {
+    background-color: #E5EDF0;
+}
+
+.primary-header {
+    background: #00B7F1;
+    background: -webkit-linear-gradient(#00B7F1, #1E5FBB);
+    background: -o-linear-gradient(#00B7F1, #1E5FBB);
+    background: -moz-linear-gradient(#00B7F1, #1E5FBB);
+    background: linear-gradient(#00B7F1, #1E5FBB);
+    color: #ffffff;
+    padding: 2pt;
+    height: 30pt;
+    padding-top: 8pt;
+}
+
+.primary-header a {
+    color: #ffffff;
+}
+
+.menuTitle {
+    font-weight: bold;
+    font-size: 110%;
+    width: 100%;
+    text-align: justify;
+}
+
+.menuTitle:after {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 0
+}
+
+.menuTitle>span {
+    display: inline-block
+}
+
+.primary-aside div {
+    font: bold Arial;
+    background-color: white;
+    color: black;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    margin-right: 20px;
+}
+
+.primary-aside div:hover {
+    font: bold Arial;
+    background-color: darkgray;
+    color: red;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    margin-right: 20px;
+}
+
+.primary-aside div a {
+    text-decoration: none;
+    color: black;
+}
+
+div.search-header input {
+    margin-left: 2em;
+    width: 65%;
+    border: 0pt dashed black;
+    border-bottom: 1pt solid black;
+}
+
+div.search-header input:focus {
+    outline: none;
+}
+
+div.search-header i {
+    font-size: 1.5em;
+}
+
+.secondary-aside {
+    text-align: right;
+    z-index: 1;
+    left: 70%;
+    width: 30%;
+    position: absolute;
+}
+
+.secondary-aside div {
+    text-align: left;
+    font: bold Arial;
+    background-color: white;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    margin-right: 8px;
+}
+
+.secondary-aside div:hover {
+    font: bold Arial;
+    background-color: darkgray;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.secondary-aside div a {
+    text-decoration: none;
+    color: black;
+}
+
+.accountImage {
+    height: 50px;
+}
+
+.headerCenter {
+    text-align: center;
+    width: 100%;
+}
+
+.headerRight {
+    text-align: right;
+    width: 100%;
+}
+
+.select-style {
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fafafa;
+    font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+.changedRowPresent {
+    animation-name: highlightMePresent;
+    animation-duration: 5s;
+}
+
+@keyframes highlightMePresent {
+    from {
+        background-color: green;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+.react-grid-Container *, :before, :after {
+    box-sizing: border-box;
+}
+
+.changedRowAbsent {
+    animation-name: highlightMeAbsent;
+    animation-duration: 5s;
+}
+
+@keyframes highlightMeAbsent {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+.changedRowTbc {
+    animation-name: highlightMeTbc;
+    animation-duration: 5s;
+}
+
+@keyframes highlightMeTbc {
+    from {
+        background-color: yellow;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+.adminGridClasses {
+    text-align: center;
+}
+
+.assignmentCreated {
+    animation-name: highlightMePresent;
+    animation-duration: 5s;
+}
+
+.assignmentRemoved {
+    animation-name: highlightMeAbsent;
+    animation-duration: 5s;
+}
