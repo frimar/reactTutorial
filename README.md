@@ -1,4 +1,4 @@
-<h1>Durchspielen verschiedener tutorials</h1>
+<h1>Durchspielen verschiedener Tutorials</h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
