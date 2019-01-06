@@ -1,70 +1,116 @@
-import React, { Component } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import CoordSystem from './components/CoordSystem';
+import CoordSystemContainer from './containers/CoordSystemContainer';
+import InputArea from './components/InputArea';
 import logo from './logo.svg';
 import './App.css';
 import './style.css';
-import TestComp from './MyComps/TestComp';
-import Calculator from './MyComps/Calculator';
-import PresenceToggle from './components/PresenceToggle';
-import constants from './const';
 
-const cbFun = () => {
-  return 'hier stehen die Scopes...';
-}
+const BasicExample = () => (
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
+      </ul>
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      temp: 3
-    };
-    this.handleTempChange = this.handleTempChange.bind(this);
+      <hr />
 
-  }
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/topics" component={Topics} />
+    </div>
+  </Router>
+);
 
-  handleTempChange(newTemp) {
-    console.log('temp changed: ', newTemp);
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+    <div className="App" >
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome to React</h1>
+      </header>
+    </div>
+  </div>
+);
 
-    this.setState({
-      temp: newTemp
-    })
-  }
+const About = () => (
+  <div>
+    <h2>About</h2>
+    <InputArea callback="this.inputChanged"></InputArea>
+    <CoordSystemContainer />
+    <CoordSystem width="500px" height="500px" backgroundColor="#cccccc" />
+  </div>
+);
 
+const Topics = ({ match }) => (
+  <div>
+    <h2>Topics</h2>
+    <ul>
+      <li>
+        <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/components`}>Components</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+      </li>
+    </ul>
 
-  render() {
-    return (
-      <div className="App" >
-        <br />
-        <ul className="flex flex-column flex-1 list-unstyled">
+    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route
+      exact
+      path={match.url}
+      render={() => <h3>Please select a topic.</h3>}
+    />
+  </div>
+);
 
-          <PresenceToggle
-            myStyle={'presenceToggle'}
-            person={
-              {
-                firstName: 'Heinz',
-                lastName: 'Schmitt',
-                presence: constants.statusPresent
-              }
-            }
-            scopeDescriptions={
-              cbFun()
-            }
-            txtLastChange='Bisher keine Änderungshistorie'
-            iconName={constants.iconPersonToBeClarified}
-          />
-        </ul>
-        <hr />
-        <Calculator className="myCalc" />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload!
-        </p>
-        <TestComp callback={this.handleTempChange} />
-      </div>
-    );
-  }
-}
+const Topic = ({ match }) => (
+  <div>
+    <h3>{match.params.topicId}</h3>
+  </div>
+);
 
-export default App;
+export default BasicExample;
+
+// import React, { Component } from 'react';
+
+// class App extends Component {
+
+//   constructor(props) {
+//     super(props);
+
+//     this.inputChanged = this.inputChanged.bind(this);
+//   }
+
+//   inputChanged() {
+
+//   }
+
+//   render() {
+//     return (
+//       <div className="App" >
+//         <header className="App-header">
+//           <img src={logo} className="App-logo" alt="logo" />
+//           <h1 className="App-title">Welcome to React</h1>
+//         </header>
+//         <InputArea callback="this.inputChanged"></InputArea>
+//         <CoordSystemContainer />
+//         <CoordSystem width="500px" height="500px" backgroundColor="#cccccc"/>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
