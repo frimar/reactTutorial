@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "dateformat": "^3.0.3",
-    "rc-menu": "^6.2.11",
+    "rc-menu": "^8.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^4.3.1",
